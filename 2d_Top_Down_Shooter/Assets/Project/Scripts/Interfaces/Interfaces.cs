@@ -16,7 +16,6 @@ interface IGun
     {
         Debug.Log("Not implemented interface 'Shoot'");
     }
-
 }
 
 

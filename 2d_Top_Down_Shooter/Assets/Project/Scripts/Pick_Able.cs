@@ -9,18 +9,19 @@ public class Pick_Able : MonoBehaviour
     [SerializeField] private bool picked_Up;
 
     private GameObject weapon_Cotainer_Publ;
+
     public void Pick_Up()
     {
         if(weapon_Cotainer_Publ == null) { return; }
 
         transform.SetParent(weapon_Cotainer_Publ.transform, false);
-        transform.localPosition = new Vector3(0.6f, 0, 0);
-
-        //Rigidbody2D rigidbody2 = transform.GetComponent<Rigidbody2D>();
-        
+        transform.localPosition = new Vector3(0.6f, 0, 0);        
 
         Take_Out_From_Scroll();
         picked_Up = true;
+
+        BoxCollider2D collider = transform.GetComponent<BoxCollider2D>();
+        collider.enabled = false;
     }
 
     public void Show_In_Scroll(GameObject parent_Panel, GameObject weapon_Container)

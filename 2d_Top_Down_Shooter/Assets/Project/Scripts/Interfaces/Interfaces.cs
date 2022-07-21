@@ -12,10 +12,7 @@ public class Interfaces : MonoBehaviour
 
 interface IGun
 {
-    void Shoot(GameObject target)
-    {
-        Debug.Log("Not implemented interface 'Shoot'");
-    }
+    public void Shoot(GameObject target);
 }
 
 

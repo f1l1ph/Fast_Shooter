@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     [Tooltip("This will be also a conatiner of guns that are on the ground")]
     [SerializeField] private GameObject panel;
 
+    [SerializeField] private GameObject invetory;
+
     private Rigidbody2D rb;
 
 
@@ -79,7 +81,7 @@ public class Player : MonoBehaviour
         if(collision.GetComponent<Pick_Able>() != null)
         {
             Pick_Able pick_Able = collision.GetComponent<Pick_Able>();
-            pick_Able.Show_In_Scroll(panel, graphicks.gameObject);
+            pick_Able.Show_In_Scroll(panel, graphicks.gameObject, invetory);
         }
     }
 

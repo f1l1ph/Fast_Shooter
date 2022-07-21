@@ -67,7 +67,7 @@ public class Pistol_test : MonoBehaviour, IGun
             GameObject bullet_Instance = Instantiate(bullet, shoot_Pos.position, transform.parent.transform.rotation);
             Rigidbody2D rb_Bullet = bullet_Instance.GetComponent<Rigidbody2D>();
 
-            rb_Bullet.AddForce(aim.transform.localPosition * bullet_Speed, ForceMode2D.Impulse);
+            rb_Bullet.AddForce(transform.right * bullet_Speed, ForceMode2D.Impulse);
         }
 
         can_Shoot = false;

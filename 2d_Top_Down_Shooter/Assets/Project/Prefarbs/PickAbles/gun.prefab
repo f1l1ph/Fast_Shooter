@@ -164,7 +164,7 @@ MonoBehaviour:
   shoot_Pos: {fileID: 7569774948507063609}
   bullet: {fileID: 6528677095648595469, guid: c7afb6ac4320f004681677a9d153f552, type: 3}
   bullet_Speed: 20
-  shots_Per_Second: 0.1
+  shots_Per_Second: 0.2
   shooting_Type: 1
 --- !u!114 &1440887740
 MonoBehaviour:

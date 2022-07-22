@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
         //apply vfx
         GameObject efct = Instantiate(impact_Effetct, gameObject.transform.position, Quaternion.identity);
 
-        Destroy(efct, 10);
+        Destroy(efct, 0.3f);
         Destroy(gameObject);    
 
     }

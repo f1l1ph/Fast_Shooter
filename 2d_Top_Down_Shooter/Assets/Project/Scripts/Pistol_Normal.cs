@@ -8,7 +8,8 @@ enum Shooting_Type{
     PrefarbShooting
 }
 
-public class Pistol_test : MonoBehaviour, IGun
+[RequireComponent(typeof(Pick_Able))]
+public class Pistol_Normal : MonoBehaviour, IGun
 {
     [Header("Shooting")]
     [SerializeField] private float      shoot_Distance;

@@ -122,8 +122,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7569774949149970979}
   - component: {fileID: 7569774949149970989}
-  - component: {fileID: 1440887740}
   - component: {fileID: 1440887739}
+  - component: {fileID: 7569774949999452566}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -166,20 +166,7 @@ MonoBehaviour:
   bullet_Speed: 20
   shots_Per_Second: 0.2
   shooting_Type: 1
---- !u!114 &1440887740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7569774949149970978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70474600b06229b40a234c79c5e345ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scroll_Prefarb: {fileID: 233450949876462984}
-  picked_Up: 0
+  ui_element: {fileID: 233450949876462987}
 --- !u!61 &1440887739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -206,6 +193,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &7569774949999452566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7569774949149970978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4c5542e37b7ba49bce6fe14f9674cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pick_Up_State: 0
 --- !u!1001 &7569774949456838109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1440887740}
+      objectReference: {fileID: 7569774949999452566}
     - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -243,11 +243,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Pick_Up_Or_Drop
+      value: Press_Button
       objectReference: {fileID: 0}
     - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Pick_Able, Assembly-CSharp
+      value: Pick_Up, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -291,11 +291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 250
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_LocalScale.x
@@ -359,11 +359,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
---- !u!1 &233450949876462984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7651717279123195989, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-  m_PrefabInstance: {fileID: 7569774949456838109}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &233450949876462987 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
@@ -374,7 +369,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 542661708, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
   m_PrefabInstance: {fileID: 7569774949456838109}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233450949876462984}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}

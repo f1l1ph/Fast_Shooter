@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 enum Shooting_Type{
     Raycast_Shooting,
     PrefarbShooting
 }
 
-[RequireComponent(typeof(Pick_Able))]
+[RequireComponent(typeof(Pick_Up))]
 public class Pistol_Normal : MonoBehaviour, IGun
 {
     [Header("Shooting")]
@@ -20,13 +19,22 @@ public class Pistol_Normal : MonoBehaviour, IGun
 
 
     [SerializeField] private Shooting_Type shooting_Type;
+    [SerializeField] private RectTransform ui_element;
 
     private bool can_Shoot = true;
     private float shoot_Able_F;
 
-    private void Start()
+    public int inventory_Position { get; set; }
+
+    public RectTransform ui_Element { get; set; }
+
+    public GameObject this_Gameobject { get; set; }
+
+    private void Awake()
     {
-        shoot_Able_F = shots_Per_Second;        
+        this_Gameobject = gameObject;
+        shoot_Able_F = shots_Per_Second;
+        ui_Element = ui_element;
     }
 
     private void Update()

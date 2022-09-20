@@ -6095,6 +6095,7 @@ GameObject:
   - component: {fileID: 7975765661863078734}
   - component: {fileID: 7975765661863078733}
   - component: {fileID: 7975765661863078732}
+  - component: {fileID: 392571111}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -6137,8 +6138,6 @@ MonoBehaviour:
   rotation_Speed: 10
   aim_Distance_Multiplayer: 150
   graphicks: {fileID: 7975765662199828767}
-  panel: {fileID: 7975765661167251581}
-  invetory: {fileID: 697268240}
 --- !u!114 &7975765661863078733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6198,6 +6197,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &392571111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975765661863078728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a8bf7b1c4379646ac1d7408159cbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory_Graphick: {fileID: 697268240}
+  selected_Gun: 0
+  panel: {fileID: 7975765661167251581}
+  gun_Container: {fileID: 7975765662199828760}
 --- !u!1 &7975765661988214446
 GameObject:
   m_ObjectHideFlags: 0

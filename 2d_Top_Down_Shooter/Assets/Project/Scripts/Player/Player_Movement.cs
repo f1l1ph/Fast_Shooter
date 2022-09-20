@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private GameObject aim;
 
@@ -16,22 +16,16 @@ public class Player : MonoBehaviour
     [SerializeField] private float          aim_Distance_Multiplayer;
 
     [Tooltip("this will also be a weapon container")]
-    [SerializeField] private Transform      graphicks;
-
-    [Tooltip("This will be also a conatiner of guns that are on the ground")]
-    [SerializeField] private GameObject panel;
-
-    [SerializeField] private GameObject invetory;
+    [SerializeField] private Transform graphicks;
 
     private Rigidbody2D rb;
 
-
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void FixedUpdate() 
     {
         //gather input values
         Gamepad gamepad = Gamepad.current;
@@ -45,14 +39,10 @@ public class Player : MonoBehaviour
     private void Aim_Player(Vector2 look)
     {
         if (look.x != 0 || look.x != 0)
-        {
-            //Shoot
-            IGun gun2 = graphicks.GetComponentInChildren<IGun>();
-            if (gun2 != null)
-            {
-                gun2.Shoot(aim);
-            }
-            
+        { 
+            Inventory inventory = transform.GetComponent<Inventory>();
+            inventory.Shoot(aim);
+
 
             aim.transform.localPosition = new Vector3(
                 look.x * Time.deltaTime * aim_Distance_Multiplayer,
@@ -76,21 +66,4 @@ public class Player : MonoBehaviour
         rb.velocity = rb_Max_Velocity;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.GetComponent<Pick_Able>() != null)
-        {
-            Pick_Able pick_Able = collision.GetComponent<Pick_Able>();
-            pick_Able.Show_In_Scroll(panel, graphicks.gameObject, invetory);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Pick_Able>() != null)
-        {
-            Pick_Able pick_Able = collision.GetComponent<Pick_Able>();
-            pick_Able.Take_Out_From_Scroll();
-        }
-    }
 }

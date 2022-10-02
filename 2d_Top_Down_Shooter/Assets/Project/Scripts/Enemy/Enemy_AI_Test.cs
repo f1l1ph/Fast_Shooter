@@ -86,5 +86,4 @@ public class Enemy_AI_Test : MonoBehaviour
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
     }
-
 }

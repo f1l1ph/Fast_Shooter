@@ -19,6 +19,13 @@ interface IGun
 
     public void Shoot(GameObject target);
 }
+interface IDamageAble
+{
+    public void Get_Damage(float damage);
+
+    public void Heal(float health);
+}
+
 
 
 

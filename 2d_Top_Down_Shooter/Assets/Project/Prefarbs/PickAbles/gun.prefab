@@ -214,52 +214,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 7569774949149970979}
     m_Modifications:
     - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 7569774949999452561}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7569774949999452566}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Press_Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Pick_Up, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 542661709, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7651717279123195989, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_Name
       value: Gun_Pref
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651717279123195989, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_Pivot.x
@@ -296,18 +256,6 @@ PrefabInstance:
     - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
       propertyPath: m_LocalPosition.x
@@ -364,14 +312,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
   m_PrefabInstance: {fileID: 7569774949456838109}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7569774949999452561 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 542661708, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
-  m_PrefabInstance: {fileID: 7569774949456838109}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

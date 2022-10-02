@@ -42,7 +42,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
     void Add_To_Inventory(GameObject weapon)
     {
         //set position parent and scale
@@ -69,15 +68,24 @@ public class Inventory : MonoBehaviour
             }
             else if (invetory[i] != null && i == invetory.Length - 1)
             {
+                Take_From_Inventory(selected_Gun);
                 invetory[selected_Gun] = weapon.GetComponent<IGun>();
                 weapon.GetComponent<IGun>().inventory_Position = selected_Gun;
+
+                Select_Gun(weapon);
             }
         }
     }
 
-    void Take_From_Inventory()
+    void Take_From_Inventory(int index)
     {
+        invetory[index].ui_Element.SetParent(invetory[index].this_Gameobject.transform);//set parent of ui element
+
+        Pick_Up gun_To_Take_Out = invetory[index].this_Gameobject.GetComponent<Pick_Up>();
         
+        gun_To_Take_Out.pick_Up_State = Pick_Up_State.Default;
+        gun_To_Take_Out.transform.SetParent(null);
+        gun_To_Take_Out.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     void Select_Gun(GameObject gun)
@@ -104,13 +112,11 @@ public class Inventory : MonoBehaviour
     {
         if (pick_Up.pick_Up_State == Pick_Up_State.Picked_Up)//when selecting
         {
-            Debug.Log("when selecting");
             Select_Gun(pick_Up.gameObject);
         }
 
         if (pick_Up.pick_Up_State == Pick_Up_State.Default)//when picking up
         {
-            Debug.Log("when picking up");
             pick_Up.pick_Up_State = Pick_Up_State.Picked_Up;
 
             Add_To_Inventory(pick_Up.gameObject);

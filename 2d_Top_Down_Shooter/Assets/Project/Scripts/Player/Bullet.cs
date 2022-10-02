@@ -24,6 +24,8 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.isTrigger) { return; }//this should ignore trigger colliders
+
         //apply vfx
         GameObject efct = Instantiate(impact_Effetct, gameObject.transform.position, Quaternion.identity);
 

@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,18 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<IGun>() != null && collision.GetComponent<Pick_Up>().pick_Up_State == Pick_Up_State.Default)
+        {
+            Take_From_Panel(collision.GetComponent<IGun>());
+
+            Pick_Up pick_Up = collision.GetComponent<Pick_Up>();
+            pick_Up.Set_Function(null);
+
+        }
+    }
+
 
     void Add_To_Inventory(GameObject weapon)
     {
@@ -51,9 +64,10 @@ public class Inventory : MonoBehaviour
             {
                 invetory[i] = weapon.GetComponent<IGun>();
                 weapon.GetComponent<IGun>().inventory_Position = i;
+                Select_Gun(weapon);
                 return;
             }
-            else if (invetory[i] != null && i == invetory.Length)
+            else if (invetory[i] != null && i == invetory.Length - 1)
             {
                 invetory[selected_Gun] = weapon.GetComponent<IGun>();
                 weapon.GetComponent<IGun>().inventory_Position = selected_Gun;
@@ -109,6 +123,11 @@ public class Inventory : MonoBehaviour
 
         gun.ui_Element.transform.localScale = Vector3.one;
         
+    }
+
+    private void Take_From_Panel(IGun gun)
+    {
+        gun.ui_Element.transform.SetParent(gun.this_Gameobject.transform);
     }
 
     public void Shoot(GameObject aim)

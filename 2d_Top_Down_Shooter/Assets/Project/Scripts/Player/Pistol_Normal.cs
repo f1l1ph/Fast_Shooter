@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Shooting_Type{
-    Raycast_Shooting,
-    PrefarbShooting
-}
 
 [RequireComponent(typeof(Pick_Up))]
 public class Pistol_Normal : MonoBehaviour, IGun
@@ -14,11 +10,10 @@ public class Pistol_Normal : MonoBehaviour, IGun
     [SerializeField] private float      shoot_Distance;
     [SerializeField] private Transform  shoot_Pos;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float      bullet_Speed;
-    [SerializeField] private float      shots_Per_Second;
+    [SerializeField] private float      bullet_Speed = 25;
+    [SerializeField] private float      shots_Per_Second = 0.5f;
+    [SerializeField] private float      recoil_Force = 1;
 
-
-    [SerializeField] private Shooting_Type shooting_Type;
     [SerializeField] private RectTransform ui_element;
 
     private bool can_Shoot = true;
@@ -58,27 +53,19 @@ public class Pistol_Normal : MonoBehaviour, IGun
     public void Shoot(GameObject aim)
     {
         if (!can_Shoot) { return; }
+       
+        //hitting for prefarb shooting
+        GameObject bullet_Instance = Instantiate(bullet, shoot_Pos.position, transform.parent.transform.rotation);
+        Rigidbody2D rb_Bullet = bullet_Instance.GetComponent<Rigidbody2D>();
 
-        if (shooting_Type == Shooting_Type.Raycast_Shooting)
-        {
-            RaycastHit2D hit = Physics2D.Raycast(shoot_Pos.transform.position, aim.transform.localPosition * shoot_Distance, shoot_Distance);
-            Debug.DrawRay(shoot_Pos.transform.position, aim.transform.localPosition * shoot_Distance, Color.green, shoot_Distance);
+        rb_Bullet.AddForce(transform.right * bullet_Speed, ForceMode2D.Impulse);
 
-            if (hit.transform != null)
-            {
-                //hitting logic in here for raycast shooting
-            }
-        }
-        else if (shooting_Type == Shooting_Type.PrefarbShooting)
-        {
+        //for adding recoil
+        Transform container_Transform = gameObject.GetComponentInParent<Transform>();
+        Rigidbody2D player_Rb = container_Transform.GetComponentInParent<Rigidbody2D>();
 
-            //hitting for prefarb shooting
-            GameObject bullet_Instance = Instantiate(bullet, shoot_Pos.position, transform.parent.transform.rotation);
-            Rigidbody2D rb_Bullet = bullet_Instance.GetComponent<Rigidbody2D>();
-
-            rb_Bullet.AddForce(transform.right * bullet_Speed, ForceMode2D.Impulse);
-        }
-
+        player_Rb.AddForce(transform.right * recoil_Force * -1, ForceMode2D.Impulse);
+        
         can_Shoot = false;
     }
 }

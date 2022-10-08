@@ -165,7 +165,7 @@ MonoBehaviour:
   bullet: {fileID: 6528677095648595469, guid: c7afb6ac4320f004681677a9d153f552, type: 3}
   bullet_Speed: 20
   shots_Per_Second: 0.2
-  recoil_Force: 100
+  recoil_Force: 50
   ui_element: {fileID: 233450949876462987}
 --- !u!61 &1440887739
 BoxCollider2D:
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4c5542e37b7ba49bce6fe14f9674cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI_Element: {fileID: 233450949876462984}
   pick_Up_State: 0
 --- !u!1001 &7569774949456838109
 PrefabInstance:
@@ -307,6 +308,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
+--- !u!1 &233450949876462984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7651717279123195989, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}
+  m_PrefabInstance: {fileID: 7569774949456838109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &233450949876462987 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7651717279123195990, guid: 4d7c2faf4ea078e4a910a88d1cf49104, type: 3}

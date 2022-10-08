@@ -97,6 +97,7 @@ public class Inventory : MonoBehaviour
                 Pick_Up pick_Up = invetory[i].this_Gameobject.GetComponent<Pick_Up>();
                 pick_Up.pick_Up_State = Pick_Up_State.Picked_Up;
                 pick_Up.gameObject.SetActive(false);
+                pick_Up.Chech_Selection();
             }
         }
         gun.gameObject.SetActive(true);

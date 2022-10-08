@@ -26,6 +26,11 @@ interface IDamageAble
     public void Heal(float health);
 }
 
+interface IAttack_Able
+{
+    public void Attack(GameObject target);
+}
+
 
 
 

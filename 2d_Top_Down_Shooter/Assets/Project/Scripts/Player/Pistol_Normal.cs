@@ -54,7 +54,6 @@ public class Pistol_Normal : MonoBehaviour, IGun
     {
         if (!can_Shoot) { return; }
        
-        //hitting for prefarb shooting
         GameObject bullet_Instance = Instantiate(bullet, shoot_Pos.position, transform.parent.transform.rotation);
         Rigidbody2D rb_Bullet = bullet_Instance.GetComponent<Rigidbody2D>();
 

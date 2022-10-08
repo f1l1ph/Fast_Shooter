@@ -188,7 +188,7 @@ MonoBehaviour:
   isGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 0.75
+  weight: 1
   sharedProfile: {fileID: 11400000, guid: 8c664bf00bc549f4f9db85a60bae2931, type: 2}
 --- !u!4 &213066008
 Transform:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0, g: 0.8993242, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.89803934, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.01
   m_ApplyToSortingLayers: 00000000
@@ -562,7 +562,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.007843138, g: 0, b: 0.15686275, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -583,7 +583,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 631
+    m_Bits: 1911
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -857,7 +857,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIeweZbmbWwIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VEtz2jAQ/iuMziVjA0lKb60hpAcSJqSTiy/CWmMNsuTRI7yG/96VbGOXTk4s3367++1DPhMuTQWZVXqhOVsqBuTHgHibfBt0zmc40K2Sa36ClvPBmS08iQbOG7VcIR77MKNKsJpnP+VWeHKEoJM8V7qcsy0kyliDcE6FAXRpZX20ROg8IAf8GU59yBGt0aO3TmhNo8EFzQykBd1RW2JLq1lOZoKWFTAvuSOPH9q040CT2EzD8MIzJQQ3jRJij1XoNKGVcdgHEhin2FkoH9+NESiAbwvrE/bDX/PcgG1EaXqccY0jqvOSX6qeW0nNrlb2SYXzle7jUVBVJ13+5x/GwZ1rVT63dePI17AFz3Zv9JhRY3uD7cOznvQwoD0VO7oR8FGAfFELrZxk6LTa+VBnYDTr/l5bSwrIdh1eS70BXfX1enwPl9D9IRG83HjX3aQG1kKFiYflg8bd/EbB4TRMkwJRr+KPgXe67d9Q43ji2lh0NV1KL2+jnPZUMg8z8904mygtQfczVCCpsMcV5rG3O7zxfR31RP1zaao3vvYV3IQEuONH0Y1rpfbXbZlC7ZdgildnBZfQjdo7XnBQiZKyPrF+S23Y2umcZr2wrePs39sijG2+TyZ0Gk1YHuWP0+E4nm6yPIpHUfQQ0/uIhOPjEvukYlULbcaDa5NdcomH1n5FBgtNq3DuTNP9gp9KZToml7laZxpAvtYZrsJBYxF8mGzOOA5oDdZyGRZOzikRKtsBS6+J0tDp/GA1TbssKan4p7IeSUkSPhsp8fD1mFcaPjnsffE22YVc/gJQSwMEFAAACAgAAAgh7Jq8759tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFJKSpKFiUmipYFJSppBmrmlrrGhZVJymoGhkYGBmWGiqYFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7B5luZtbAgAAFQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7Jq8759tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIewp2lRpWgIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VEtz2jAQ/iuMziVjA0lKb60hpAcSJqSTiy/CWmMNsuTRI7yG/96VbGOXTk4s3367++1DPhMuTQWZVXqhOVsqBuTHgHibfBt0zmc40K2Sa36ClvPBmS08iQbOG7VcIR77MKNKsJpnP+VWeHKEoJM8V7qcsy0kyliDcE6FAXRpZX20ROg8IAf8GU59yBGt0aO3TmhNo8EFzQykBd1RW2JLq1lOZoKWFTAvuSOPH9q040CT2EzD8MIzJQQ3jRJij1XoNKGVcdgHEhin2FkoH9+NESiAbwvrE/bDX/PcgG1EaXqccY0jqvOSX6qeW0nNrlb2SYXzle7jUVBVJ13+5x/GwZ1rVT63dePI17AFz3Zv9JhRY3uD7cOznvQwoD0VO7oR8FGAfFELrZxk6LTa+VBnYDTr/l5bSwrIdh1eS70BXfX1enwPl9D9IRG83HjX3aQG1kKFiYflg8bd/EbB4TRMkwJRr+KPgXe67d9Q43ji2lh0NV1KL2+jnPZUMg8z8904mygtQfczVCCpsMcV5rG3O7zxfR31RP1zaao3vvYV3IQEuONH0Y1rpfbXbZlC7ZdgildnBZfQjdo7XnBQiZKyPrF+S23Y2umcZr2wrePs39sijG2+TyZ0Gk1YHuWP0+E4nm6yPIpHUfQQ0/uIhOPjEvukYlULbcaDa5NdcomH1n5FBgtNq3DuTNP9gp9K1RfIZa7WmQaQr3WKq3LQWAVfJpszjhNag7Vcho2Tc0qEynbA0mvNNLQ6P1hN0y5LSir+qaxHUpKE70ZKPHy95pWGTw57X7xNdiGXv1BLAwQUAAAICAAACCHsmrzvn20AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UkpKkoWJSaKlgUlKmkGauaWusaFlUnKagaGRgYGZYaKpgVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsKdpUaVoCAAAWBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsmrzvn20AAAB4AAAACQAkAAAAAAAAAAAAAACnAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0, b: 0.047945976, a: 1}
+  m_Color: {r: 0.3803922, g: 0, b: 0.5529412, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.01
   m_ApplyToSortingLayers: 00000000
@@ -1382,7 +1382,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 380089959, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 380089959, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365753282864661123, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1365753282864661123, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
@@ -1469,11 +1477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8526248794154008702, guid: bf38c053a5bf37b4b9b5de23c2e78f51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.08
+      value: -15.1
       objectReference: {fileID: 0}
     - target: {fileID: 8526248794154008702, guid: bf38c053a5bf37b4b9b5de23c2e78f51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.31
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 8526248794154008702, guid: bf38c053a5bf37b4b9b5de23c2e78f51, type: 3}
       propertyPath: m_LocalPosition.z

@@ -13,18 +13,33 @@ public enum Pick_Up_State
 
 public class Pick_Up : MonoBehaviour
 {
+    [SerializeField] private GameObject UI_Element;
+
     private Inventory inventory;
 
     public Pick_Up_State pick_Up_State = Pick_Up_State.Default;
 
     void FixedUpdate()
     {
-        if(pick_Up_State == Pick_Up_State.Picked_Up)
+        if (pick_Up_State == Pick_Up_State.Picked_Up)
         {
             gameObject.SetActive(false);
         }
+
+        Chech_Selection();
     }
 
+    public void Chech_Selection()
+    {
+        if (pick_Up_State == Pick_Up_State.Selected)
+        {
+            UI_Element.transform.localScale = Vector3.one * 1.25f;
+        }
+        else
+        {
+            UI_Element.transform.localScale = Vector3.one;
+        }
+    }
 
     public void Set_Function(Inventory inventory)
     {

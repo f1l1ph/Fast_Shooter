@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float max_Velocity = 25f;
     [SerializeField] private float bullet_Detroy_Time = 3f;
     [SerializeField] private float damage = 20;
+    [SerializeField] private float force_To_Hit = 1;
 
     [SerializeField] private GameObject impact_Effetct;
 
@@ -23,6 +24,7 @@ public class Bullet : MonoBehaviour
         rb.velocity = max_Rb_Velocity;
     }
 
+    //can also set damage if needed 
     public void SetDamage(float damage)
     {
         this.damage = damage;
@@ -32,9 +34,15 @@ public class Bullet : MonoBehaviour
     {
         if (collision.isTrigger) { return; }//this should ignore trigger colliders
 
+        //gives damage to IDamageAble
         if(collision.GetComponent<IDamageAble>() != null)
         {
             collision.GetComponent<IDamageAble>().Get_Damage(damage);
+        }
+        //gives force to rigidbody
+        if (collision.GetComponent<Rigidbody2D>() != null)
+        {
+            collision.GetComponent<Rigidbody2D>().AddForce(transform.position * force_To_Hit, ForceMode2D.Impulse);
         }
 
         //apply vfx

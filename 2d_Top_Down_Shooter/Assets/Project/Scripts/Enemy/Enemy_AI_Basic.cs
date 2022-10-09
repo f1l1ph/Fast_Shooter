@@ -6,22 +6,30 @@ using Pathfinding;
 [RequireComponent(typeof(IAttack_Able))]
 public class Enemy_AI_Basic : MonoBehaviour
 {
-    [SerializeField] private float rotation_Speed = 5;
-
     [SerializeField] private Transform target;
-    [SerializeField] private float speed = 200f;
+
+    [Header("Moving")]
+    [Tooltip("Speed when rotating towards player")] [SerializeField] private float rotation_Speed   = 5;
+    [Tooltip("Moving speed")]                       [SerializeField] private float speed            = 200f;
     [SerializeField] private float next_Waypoint_Distance = 3;
 
-    bool attacking = false;
+    [Header("Attacking")]
     [SerializeField] private float distance_To_Attack = 5f;
+    bool attacking = false;
+
+    [Header("Waypoints")]
+    [SerializeField] private Transform[] waypoints;
+    bool isWaypointing = true;
+    private int current_Waypoint_In_Array = 0;
 
     Path path;
     int currentWaypoint = 0;
-    bool reachedEndOfPath = false;// if true than attack
+    bool reachedEndOfPath = false;
 
     Seeker seeker;
     Rigidbody2D rb;
 
+    [Tooltip("Graphics that will be rotated towards the target")]
     [SerializeField] private Transform graphicks;
 
     void Start()
@@ -36,16 +44,20 @@ public class Enemy_AI_Basic : MonoBehaviour
     {
         CalculatePathAndMove();
 
-        if (!attacking)
+        if (!attacking && isWaypointing)
         {
             Rotate_Towards_Point();
+            FollowWayPoints();
         }
         else
         {
             Rotate_Towards_Target();
         }
 
-        Attack();
+        if (!isWaypointing)
+        {
+            Attack();
+        }
     }
 
     private void CalculatePathAndMove()
@@ -108,6 +120,24 @@ public class Enemy_AI_Basic : MonoBehaviour
         }
     }
 
+    private void FollowWayPoints()
+    {
+        isWaypointing = true;
+        attacking = false;
+        
+        target = waypoints[current_Waypoint_In_Array];
+        float distance_To_Target = Vector2.Distance(target.transform.position, transform.position);
+
+        if (distance_To_Target <= 2) 
+        {
+            current_Waypoint_In_Array++;
+            if(current_Waypoint_In_Array >= waypoints.Length)
+            {
+                current_Waypoint_In_Array = 0;
+            }
+        }
+    }
+
     private void Attack()
     {
         float distance_Between_Target = Vector2.Distance(target.position, transform.position);
@@ -124,5 +154,12 @@ public class Enemy_AI_Basic : MonoBehaviour
             attacking = false;
             return;
         }
+    }
+
+    public void SetTargetAndAttack(Transform target)
+    {
+        isWaypointing   = false;
+        this.target     = target;
+        Attack();
     }
 }

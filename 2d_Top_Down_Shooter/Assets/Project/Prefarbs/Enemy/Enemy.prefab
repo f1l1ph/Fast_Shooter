@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8526248794047832281}
   - component: {fileID: 8526248794047832280}
+  - component: {fileID: 740588381}
   m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
@@ -280,6 +281,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &740588381
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8526248794047832282}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.8, y: 0}
+  - {x: 7, y: 3}
+  - {x: 7, y: -3}
+  - {x: 0.8, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &8526248794093695830
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,11 +480,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef089508be94ac844b10b7df1c7dc44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotation_Speed: 20
   target: {fileID: 0}
+  rotation_Speed: 20
   speed: 1500
-  next_Waypoint_Distance: 0.5
-  distance_To_Attack: 9
+  next_Waypoint_Distance: 2
+  distance_To_Attack: 15
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   graphicks: {fileID: 8526248794047832281}
 --- !u!50 &8526248794154008643
 Rigidbody2D:

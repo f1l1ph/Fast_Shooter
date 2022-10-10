@@ -899,6 +899,37 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &804459434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7975765661863078728, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+  m_PrefabInstance: {fileID: 7975765662819263243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &804459436
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804459434}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &954511867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2048,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Container
       objectReference: {fileID: 0}
+    - target: {fileID: 7975765662199828760, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975765662199828760, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975765662199828764, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
 --- !u!4 &7975765662819263244 stripped
@@ -2035,6 +2078,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 7975765662819263244}
+    - target: {fileID: 8526248794154008642, guid: bf38c053a5bf37b4b9b5de23c2e78f51, type: 3}
+      propertyPath: distance_To_Attack
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8526248794154008642, guid: bf38c053a5bf37b4b9b5de23c2e78f51, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 

@@ -44,10 +44,14 @@ public class Enemy_AI_Basic : MonoBehaviour
     {
         CalculatePathAndMove();
 
-        if (!attacking && isWaypointing)
+        if (isWaypointing)
         {
             Rotate_Towards_Point();
             FollowWayPoints();
+        }
+        else if (!attacking)
+        {
+            Rotate_Towards_Point();
         }
         else
         {
@@ -122,8 +126,8 @@ public class Enemy_AI_Basic : MonoBehaviour
 
     private void FollowWayPoints()
     {
-        isWaypointing = true;
-        attacking = false;
+        //isWaypointing = true;
+        //attacking = false;
         
         target = waypoints[current_Waypoint_In_Array];
         float distance_To_Target = Vector2.Distance(target.transform.position, transform.position);

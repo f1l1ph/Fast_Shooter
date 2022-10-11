@@ -38,7 +38,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Aim_Player(Vector2 look)
     {
-        if (look.x != 0 || look.x != 0)
+        if (look.x != 0 || look.y != 0)
         { 
             Inventory inventory = transform.GetComponent<Inventory>();
             inventory.Shoot(aim);

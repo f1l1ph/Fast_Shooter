@@ -104,7 +104,7 @@ public class Enemy_AI_Basic : MonoBehaviour
         Vector3 vector_To_Target = target.transform.position - transform.position;
         float angle = Mathf.Atan2(vector_To_Target.y, vector_To_Target.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotation_Speed);
+        graphicks.transform.rotation = Quaternion.Slerp(graphicks.transform.rotation, q, Time.deltaTime * rotation_Speed);
     }
 
     void OnPathComplete(Path p)

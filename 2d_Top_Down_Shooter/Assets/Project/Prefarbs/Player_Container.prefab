@@ -6196,7 +6196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Max_Health: 100
-  current_Health: 50
+  current_Health: 100
   health_Slider: {fileID: 260874018}
 --- !u!1 &7975765661988214446
 GameObject:

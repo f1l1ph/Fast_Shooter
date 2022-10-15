@@ -151,8 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max_Velocity: 25
   bullet_Detroy_Time: 3
-  damage: 20
-  force_To_Hit: 1
+  damage: 10
+  force_To_Hit: 0.5
   impact_Effetct: {fileID: 6432940838153558143, guid: ded963ba50f75474791f271f789268fb, type: 3}
 --- !u!61 &1331046326653275964
 BoxCollider2D:

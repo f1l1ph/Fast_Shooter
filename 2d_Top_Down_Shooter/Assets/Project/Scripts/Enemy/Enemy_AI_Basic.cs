@@ -11,7 +11,8 @@ public class Enemy_AI_Basic : MonoBehaviour
     [Header("Moving")]
     [Tooltip("Speed when rotating towards player")] [SerializeField] private float rotation_Speed   = 5;
     [Tooltip("Moving speed")]                       [SerializeField] private float speed            = 200f;
-    [SerializeField] private float next_Waypoint_Distance = 3;
+    [SerializeField] private float next_Waypoint_Distance_Inspector = 3;
+    private float next_Waypoint_Distance;
 
     [Tooltip("Will change enemy mass and linear drag when attacking so it can get closer to target, only enable for melle enemies")] 
     [SerializeField] private bool  is_Melee;
@@ -30,18 +31,16 @@ public class Enemy_AI_Basic : MonoBehaviour
 
     private Seeker      seeker;
     private Rigidbody2D rb;
-    private float       linear_Drag;
-    private float       mass;
 
     [Tooltip("Graphics that will be rotated towards the target")]
     [SerializeField] private Transform graphicks;
 
     void Start()
     {
+        next_Waypoint_Distance = next_Waypoint_Distance_Inspector;
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-        linear_Drag = rb.drag;
-        mass = rb.mass;
 
         InvokeRepeating("UpdatePath", 0, 0.5f);
     }
@@ -52,10 +51,15 @@ public class Enemy_AI_Basic : MonoBehaviour
 
         if (isWaypointing)
         {
-           Rotate_Towards_Velocity();
-            FollowWayPoints();
+           FollowWayPoints();
+           next_Waypoint_Distance = next_Waypoint_Distance_Inspector;
         }
-        else if (!attacking)
+        else if (!isWaypointing)
+        {
+            Attack();
+        }
+
+        if (!attacking)
         {
             Rotate_Towards_Velocity();
         }
@@ -64,10 +68,7 @@ public class Enemy_AI_Basic : MonoBehaviour
             Rotate_Towards_Target();
         }
 
-        if (!isWaypointing)
-        {
-            Attack();
-        }
+        
     }
 
     private void CalculatePathAndMove()
@@ -94,9 +95,6 @@ public class Enemy_AI_Basic : MonoBehaviour
 
     private void Rotate_Towards_Velocity()
     {
-        rb.drag = linear_Drag;
-        rb.mass = mass;
-
         Vector2 v = rb.velocity;
 
         float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
@@ -105,12 +103,6 @@ public class Enemy_AI_Basic : MonoBehaviour
 
     private void Rotate_Towards_Target()
     {
-        if (is_Melee) 
-        {  
-            rb.drag = linear_Drag / 2;
-            rb.mass = mass / 2;
-        }
-
         Vector3 vector_To_Target = target.transform.position - transform.position;
         float angle = Mathf.Atan2(vector_To_Target.y, vector_To_Target.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -128,6 +120,8 @@ public class Enemy_AI_Basic : MonoBehaviour
 
     void UpdatePath()
     {
+        if(target == null) { return; }
+
         if (seeker.IsDone())
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
@@ -138,6 +132,7 @@ public class Enemy_AI_Basic : MonoBehaviour
     {
         //isWaypointing = true;
         //attacking = false;
+        if (waypoints[0] == null) { return; }
         
         target = waypoints[current_Waypoint_In_Array];
         float distance_To_Target = Vector2.Distance(target.transform.position, transform.position);
@@ -154,6 +149,7 @@ public class Enemy_AI_Basic : MonoBehaviour
 
     private void Attack()
     {
+        next_Waypoint_Distance = 1;
         float distance_Between_Target = Vector2.Distance(target.position, transform.position);
 
         if(distance_Between_Target <= distance_To_Attack)

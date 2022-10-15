@@ -61,7 +61,7 @@ public class Enemy_Melee : MonoBehaviour, IAttack_Able
 
         //check if something is player
         float distance_Between_Objects = Vector2.Distance(hit.transform.position, transform.position);
-        Debug.Log(distance_Between_Objects + ":" + hit.transform.name);
+
         if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player") && distance_Between_Objects <= attack_Distance)
         {
             //give damage

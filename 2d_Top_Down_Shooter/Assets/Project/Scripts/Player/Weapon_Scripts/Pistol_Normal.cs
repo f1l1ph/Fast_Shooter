@@ -13,11 +13,13 @@ public class Pistol_Normal : MonoBehaviour, IGun
     [SerializeField] private float      bullet_Speed = 25;
     [SerializeField] private float      shots_Per_Second = 0.5f;
     [SerializeField] private float      recoil_Force = 1;
+    [SerializeField] private int        energy_Consumption;
 
     [SerializeField] private RectTransform ui_element;
 
     private bool can_Shoot = true;
     private float shoot_Able_F;
+
 
     public int inventory_Position { get; set; }
 
@@ -25,11 +27,15 @@ public class Pistol_Normal : MonoBehaviour, IGun
 
     public GameObject this_Gameobject { get; set; }
 
+    public int energy_Needed_To_Shoot { get; set; }
+
+
     private void Awake()
     {
         this_Gameobject = gameObject;
         shoot_Able_F = shots_Per_Second;
         ui_Element = ui_element;
+        energy_Needed_To_Shoot = energy_Consumption;
     }
 
     private void Update()
@@ -50,9 +56,9 @@ public class Pistol_Normal : MonoBehaviour, IGun
         }
     }
 
-    public void Shoot(GameObject aim)
+    public bool Shoot(GameObject aim)
     {
-        if (!can_Shoot) { return; }
+        if (!can_Shoot) { return false; }
        
         GameObject bullet_Instance = Instantiate(bullet, shoot_Pos.position, transform.parent.transform.rotation);
         Rigidbody2D rb_Bullet = bullet_Instance.GetComponent<Rigidbody2D>();
@@ -66,5 +72,7 @@ public class Pistol_Normal : MonoBehaviour, IGun
         player_Rb.AddForce(transform.right * recoil_Force * -1, ForceMode2D.Impulse);
         
         can_Shoot = false;
+
+        return true;
     }
 }

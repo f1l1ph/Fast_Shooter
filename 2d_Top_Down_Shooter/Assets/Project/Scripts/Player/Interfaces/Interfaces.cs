@@ -12,12 +12,14 @@ public class Interfaces : MonoBehaviour
 
 interface IGun
 {
+    int energy_Needed_To_Shoot { get; set; }
+
     int inventory_Position { get; set; }
     RectTransform ui_Element { get; set; }
 
     GameObject this_Gameobject { get; set; }
 
-    public void Shoot(GameObject target);
+    public bool Shoot(GameObject target);
 }
 interface IDamageAble
 {
@@ -30,7 +32,3 @@ interface IAttack_Able
 {
     public void Attack(GameObject target);
 }
-
-
-
-

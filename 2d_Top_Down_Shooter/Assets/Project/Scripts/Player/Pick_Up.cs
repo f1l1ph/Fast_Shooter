@@ -26,10 +26,10 @@ public class Pick_Up : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        Chech_Selection();
+        Check_Selection();
     }
 
-    public void Chech_Selection()
+    public void Check_Selection()
     {
         if (pick_Up_State == Pick_Up_State.Selected)
         {

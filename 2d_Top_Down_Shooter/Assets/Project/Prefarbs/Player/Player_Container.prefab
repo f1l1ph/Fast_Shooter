@@ -6061,11 +6061,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7975765661863078735}
-  - component: {fileID: 7975765661863078734}
   - component: {fileID: 7975765661863078733}
   - component: {fileID: 7975765661863078732}
+  - component: {fileID: 7975765661863078734}
   - component: {fileID: 392571111}
   - component: {fileID: 623647255}
+  - component: {fileID: 2547255009047576367}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -6090,24 +6091,6 @@ Transform:
   m_Father: {fileID: 7975765661644829936}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7975765661863078734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7975765661863078728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af9e9706452efb4fa5fbc99214ab5d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aim: {fileID: 7975765661988214446}
-  move_Speed: 5000
-  max_Move_Velocity: 4
-  rotation_Speed: 10
-  aim_Distance_Multiplayer: 150
-  graphicks: {fileID: 7975765662199828767}
 --- !u!114 &7975765661863078733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6167,6 +6150,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7975765661863078734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975765661863078728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af9e9706452efb4fa5fbc99214ab5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aim: {fileID: 7975765661988214446}
+  move_Speed: 5000
+  max_Move_Velocity: 4
+  rotation_Speed: 10
+  aim_Distance_Multiplayer: 150
+  graphicks: {fileID: 7975765662199828767}
 --- !u!114 &392571111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6198,6 +6199,18 @@ MonoBehaviour:
   Max_Health: 100
   current_Health: 100
   health_Slider: {fileID: 260874018}
+--- !u!114 &2547255009047576367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975765661863078728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c27ad4333a0824ba72069e7eb801c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7975765661988214446
 GameObject:
   m_ObjectHideFlags: 0

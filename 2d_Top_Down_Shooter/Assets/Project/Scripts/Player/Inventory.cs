@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     [Tooltip("Ui container for inventory objects.")]
     [SerializeField] private GameObject inventory_Graphick;
 
-    [SerializeField] private IGun[] invetory = { null, null, null };
+    private IGun[] invetory = { null, null, null };
     [SerializeField] private int selected_Gun = 0;
 
     [Tooltip("This will be a UI conatiner of guns that are on the ground.")]
@@ -16,6 +16,8 @@ public class Inventory : MonoBehaviour
 
     [Tooltip("This is gameobject container of guns.")]
     [SerializeField] private GameObject gun_Container;
+
+    [SerializeField] private Player_Energy player_Energy;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -97,7 +99,7 @@ public class Inventory : MonoBehaviour
                 Pick_Up pick_Up = invetory[i].this_Gameobject.GetComponent<Pick_Up>();
                 pick_Up.pick_Up_State = Pick_Up_State.Picked_Up;
                 pick_Up.gameObject.SetActive(false);
-                pick_Up.Chech_Selection();
+                pick_Up.Check_Selection();
             }
         }
         gun.gameObject.SetActive(true);
@@ -139,9 +141,12 @@ public class Inventory : MonoBehaviour
 
     public void Shoot(GameObject aim)
     {
-        if (invetory[selected_Gun] != null) 
+        if (invetory[selected_Gun] != null && player_Energy.GetEnergy() >= invetory[selected_Gun].energy_Needed_To_Shoot) 
         {
-            invetory[selected_Gun].Shoot(aim);
+            if (invetory[selected_Gun].Shoot(aim))
+            {
+                player_Energy.Consume_Energy(invetory[selected_Gun].energy_Needed_To_Shoot);
+            }
         }
     }
 }

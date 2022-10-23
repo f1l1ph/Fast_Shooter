@@ -36,6 +36,7 @@ public class Player_Health : MonoBehaviour, IDamageAble
     {
         Debug.LogError("You died");
     }
+
     private void UpdateAndCheckForHealth()
     {
         Mathf.Clamp(current_Health, current_Health, Max_Health);

@@ -6067,6 +6067,7 @@ GameObject:
   - component: {fileID: 392571111}
   - component: {fileID: 623647255}
   - component: {fileID: 2547255009047576367}
+  - component: {fileID: 7748077141613705031}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -6184,6 +6185,7 @@ MonoBehaviour:
   selected_Gun: 0
   panel: {fileID: 7975765661167251581}
   gun_Container: {fileID: 7975765662199828760}
+  player_Energy: {fileID: 7748077141613705031}
 --- !u!114 &623647255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6211,6 +6213,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c27ad4333a0824ba72069e7eb801c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7748077141613705031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975765661863078728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313d95648c97de8429a85c40e07e86e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_Energy: 100
+  current_Energy: 100
+  energy_Slider: {fileID: 1760657159951652616}
 --- !u!1 &7975765661988214446
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Project/Scenes/Main_Menu_Scene.unity
+    guid: 3b4f7884878a4f74fa27d39742c656ea
+  - enabled: 1
     path: Assets/Project/Scenes/Egypt_Level_Collor_Pallete.unity
     guid: 5db2d875b16fae744aaada6d51715ac3
   - enabled: 1

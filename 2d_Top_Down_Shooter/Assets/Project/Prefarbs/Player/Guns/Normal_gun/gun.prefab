@@ -166,6 +166,7 @@ MonoBehaviour:
   bullet_Speed: 20
   shots_Per_Second: 0.2
   recoil_Force: 50
+  energy_Consumption: 1
   ui_element: {fileID: 233450949876462987}
 --- !u!61 &1440887739
 BoxCollider2D:

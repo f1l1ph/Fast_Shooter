@@ -20,6 +20,10 @@ public class Asset_Collector : MonoBehaviour
             {
                 transform.GetComponent<Player_Health>().Heal(asset.Action());
             }
+            if(asset.collectible == Collectibles.energy)
+            {
+                transform.GetComponent<Player_Energy>().Add_Energy(asset.Action());
+            }
         }
     }
 }

@@ -5329,6 +5329,7 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
+  m_Mesh: {fileID: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.25
@@ -5494,6 +5495,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max_Health: 50
   current_Health: 100
+  assets_To_Drop:
+  - {fileID: 2593659377148731976, guid: c217db53ca398c5479938ca7171eb359, type: 3}
+  - {fileID: 2593659377148731976, guid: 6aecced1a57757046a929d212efcabb5, type: 3}
+  asset_Dropper: 3
 --- !u!114 &1891023176
 MonoBehaviour:
   m_ObjectHideFlags: 0

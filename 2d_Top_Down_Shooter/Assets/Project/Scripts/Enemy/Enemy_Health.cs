@@ -6,6 +6,8 @@ public class Enemy_Health : MonoBehaviour, IDamageAble
 {
     [SerializeField] private float Max_Health = 100;
     [SerializeField] private float current_Health;
+    [SerializeField] private GameObject[] assets_To_Drop;
+    [SerializeField] private float asset_Dropper = 3f;
 
     private void Start()
     {
@@ -30,8 +32,13 @@ public class Enemy_Health : MonoBehaviour, IDamageAble
     {
         Debug.Log("enemy died");
 
-
+        for (int i = 0; i <= assets_To_Drop.Length-1; i++)
+        {
+            for (int x = 0; x <= Random.Range(1, asset_Dropper); x++)
+            {
+                Instantiate(assets_To_Drop[i], transform.position + new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0), Quaternion.identity);
+            }
+        }
         Destroy(gameObject);
     }
-
 }

@@ -31,7 +31,7 @@ public class Player_Energy : MonoBehaviour
 
     private void Update_Energy()
     {
-        Mathf.Clamp(current_Energy, current_Energy, max_Energy);
+        current_Energy = Mathf.Clamp(current_Energy, 0, max_Energy);
         energy_Slider.value = current_Energy;
     }
 

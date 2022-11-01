@@ -67,8 +67,6 @@ public class Enemy_AI_Basic : MonoBehaviour
         {
             Rotate_Towards_Target();
         }
-
-        
     }
 
     private void CalculatePathAndMove()
@@ -130,8 +128,6 @@ public class Enemy_AI_Basic : MonoBehaviour
 
     private void FollowWayPoints()
     {
-        //isWaypointing = true;
-        //attacking = false;
         if (waypoints[0] == null) { return; }
         
         target = waypoints[current_Waypoint_In_Array];

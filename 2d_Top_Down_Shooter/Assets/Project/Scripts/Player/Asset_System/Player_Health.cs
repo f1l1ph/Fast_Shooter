@@ -39,7 +39,7 @@ public class Player_Health : MonoBehaviour, IDamageAble
 
     private void UpdateAndCheckForHealth()
     {
-        Mathf.Clamp(current_Health, current_Health, Max_Health);
+        current_Health = Mathf.Clamp(current_Health, 0, Max_Health);
         health_Slider.value = current_Health;
 
         if (current_Health <= 0) { Kill(); }

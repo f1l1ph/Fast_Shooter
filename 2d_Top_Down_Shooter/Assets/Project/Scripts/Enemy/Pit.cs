@@ -12,15 +12,13 @@ public class Pit : MonoBehaviour
     [SerializeField] private Transform[] spawn_Positions;
 
     [SerializeField] private int max_Waves;
-    private int wave_Count = 0;
+    [SerializeField] private int wave_Count = 0;
 
     bool player_Entered = false;
 
     GameObject[] enemies;
 
     GameObject[] strong_Enemies;
-
-
 
     private void Start()
     {
@@ -33,11 +31,15 @@ public class Pit : MonoBehaviour
     {
         Start_Wave();
         player_Entered = true;
-        InvokeRepeating("Chcek_For_Wave", 2f, Mathf.Infinity);
+        Chcek_For_Wave();
     }
 
     private void Start_Wave()
     {
+        //if(wave_Count >= max_Waves)
+
+        Debug.Log("Started wave");
+
         for (int i = 0; i <= spawn_Positions.Length-1; i++)
         {
             GameObject enemy = Instantiate(normal_Enemy, spawn_Positions[i].position, Quaternion.identity);
@@ -52,27 +54,29 @@ public class Pit : MonoBehaviour
         }
 
         wave_Count++;
-
     }
 
     private void Chcek_For_Wave()
     {
-        if (wave_Count == max_Waves)
-        {
-            for (int i = 0; i < doors.Length; i++)
-            {
-                doors[i].Open();
-            }
-            return;
-        }
 
         if (player_Entered == false) { return; }
-        if(wave_Count == max_Waves) { return; }
 
-        for(int i = 0; i < enemies.Length; i++)
+        Invoke("Chcek_For_Wave", 0.1f);
+
+        for (int i = 0; i < enemies.Length; i++)
         {
             if (enemies[i] != null) { return; }
-            else if (enemies[i] == null && i == enemies.Length - 1) { Start_Wave(); } 
+
+            if (wave_Count >= max_Waves)
+            {
+                for (int x = 0; x < doors.Length; x++)
+                {
+                    doors[x].Open();
+                }
+                return;
+            }
+
+            if (enemies[i] == null && i >= enemies.Length - 1) { Start_Wave(); } 
         }
     }
 }

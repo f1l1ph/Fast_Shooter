@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,7 +35,7 @@ public class Player_Health : MonoBehaviour, IDamageAble
 
     private void Kill()
     {
-        Debug.LogError("You died");
+        Death_Menu.Death_Menu_Instance.Activate();
     }
 
     private void UpdateAndCheckForHealth()

@@ -36,29 +36,24 @@ public class Pit : MonoBehaviour
 
     private void Start_Wave()
     {
-        //if(wave_Count >= max_Waves)
-
-        Debug.Log("Started wave");
-
         for (int i = 0; i <= spawn_Positions.Length-1; i++)
         {
             GameObject enemy = Instantiate(normal_Enemy, spawn_Positions[i].position, Quaternion.identity);
             enemies[i] = enemy;
+            enemies[i].GetComponent<Enemy_AI_Basic>().SetTargetAndAttack(Player_Health.instance.transform);
 
             if (Random.Range(0, 10 - wave_Count) == 10 - wave_Count - 1) 
             {
                 GameObject strong_Enemy_Instance = Instantiate(strong_Enemy, spawn_Positions[i].position, Quaternion.identity);
                 strong_Enemies[i] = strong_Enemy_Instance;
-                Debug.Log("strong enemy");
+                strong_Enemies[i].GetComponent<Enemy_AI_Basic>().SetTargetAndAttack(Player_Health.instance.transform);
             }
         }
-
         wave_Count++;
     }
 
     private void Chcek_For_Wave()
     {
-
         if (player_Entered == false) { return; }
 
         Invoke("Chcek_For_Wave", 0.1f);

@@ -6,13 +6,26 @@ using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour, IDamageAble
 {
+    public static Player_Health instance { get; private set; }
+
+
     [SerializeField] private float  Max_Health = 100;
     [SerializeField] private float  current_Health;
     [SerializeField] Slider         health_Slider;
 
     private void Start()
     {
-        if(current_Health > Max_Health) { current_Health = Max_Health; }
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
+
+        if (current_Health > Max_Health) { current_Health = Max_Health; }
         if(current_Health < 0) { Kill(); }
 
         health_Slider.maxValue = Max_Health;

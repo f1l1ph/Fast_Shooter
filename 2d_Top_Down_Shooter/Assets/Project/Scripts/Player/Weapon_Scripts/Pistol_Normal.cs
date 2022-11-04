@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 [RequireComponent(typeof(Pick_Up))]
@@ -14,7 +15,7 @@ public class Pistol_Normal : MonoBehaviour, IGun
     [SerializeField] private float      shots_Per_Second = 0.5f;
     [SerializeField] private float      recoil_Force = 1;
     [SerializeField] private int        energy_Consumption;
-
+    [SerializeField] private AudioSource source;
     [SerializeField] private RectTransform ui_element;
 
     private bool can_Shoot = true;
@@ -59,7 +60,9 @@ public class Pistol_Normal : MonoBehaviour, IGun
     public bool Shoot(GameObject aim)
     {
         if (!can_Shoot) { return false; }
-       
+
+        source.PlayOneShot(source.clip);
+
         GameObject bullet_Instance = Instantiate(bullet, shoot_Pos.position, transform.parent.transform.rotation);
         Rigidbody2D rb_Bullet = bullet_Instance.GetComponent<Rigidbody2D>();
 

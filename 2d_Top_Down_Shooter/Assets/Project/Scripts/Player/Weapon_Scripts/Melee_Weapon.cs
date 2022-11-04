@@ -10,7 +10,10 @@ public class Melee_Weapon : MonoBehaviour, IGun
     [SerializeField] private Transform point;
     [SerializeField] private Transform point_To_Rotate_Around;
     [SerializeField] private float rotation_F = 1;
+    [SerializeField] private float damage = 30f;
+    [SerializeField] private float force_To_Give = 1f;
 
+    [SerializeField] private AudioSource source;
     [SerializeField] private GameObject graphicks;
     [SerializeField] private Melee_Graphicks graphicks_Script;
 
@@ -31,6 +34,9 @@ public class Melee_Weapon : MonoBehaviour, IGun
         ui_Element = ui_element;
         this_Gameobject = gameObject;
         hit_Able_F = hits_Per_Second;
+
+        graphicks_Script.damage = damage;
+        graphicks_Script.force_To_Hit = force_To_Give;
     }
 
     private void Update()
@@ -69,6 +75,7 @@ public class Melee_Weapon : MonoBehaviour, IGun
         //rotate sword graphicks
         //hit
         //enable collider of sword
+        source.PlayOneShot(source.clip);
 
         can_Hit = false;
         return true;

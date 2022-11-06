@@ -567,6 +567,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &568809189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7078827024475513950, guid: ea0c2d4d01f748c46989ba916904ac54, type: 3}
+  m_PrefabInstance: {fileID: 1029754741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577305094
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +942,7 @@ MonoBehaviour:
   pick_Up: {fileID: 8774027320239008765}
   rotation_Speed: 1
   arrow_Towards_Enemy: {fileID: 492237571}
-  enemy: {fileID: 0}
+  enemy: {fileID: 568809189}
   enemy_Shoot_Text: {fileID: 1644529798}
 --- !u!114 &669666918
 MonoBehaviour:
@@ -3690,7 +3695,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 220288290, guid: 442872a6e88f64a4e89fffa97ba8d5b8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 442872a6e88f64a4e89fffa97ba8d5b8, type: 3}
 --- !u!4 &1791166187 stripped
 Transform:
@@ -4889,7 +4895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.009994984, a: 1}
+  m_Color: {r: 0.34117648, g: 0.34117648, b: 0.34117648, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

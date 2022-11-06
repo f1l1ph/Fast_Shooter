@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 276917167, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 380089959, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -70,6 +74,14 @@ PrefabInstance:
     - target: {fileID: 7855233900768739363, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
       propertyPath: m_Color.r
       value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975765661167251580, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975765661167251580, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975765661644829936, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
       propertyPath: m_RootOrder
@@ -129,23 +141,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
---- !u!1 &2198658334918857080 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7975765661863078728, guid: 73739948dfc445a4689e65fc032312fd, type: 3}
-  m_PrefabInstance: {fileID: 8083020732827777584}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &220288290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2198658334918857080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfb6675621a0b4840a9b1634f3ccf0ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bow_Clip: {fileID: 8300000, guid: 9f71bd16281855d4b9cc3fa82e3176d7, type: 3}
-  sword_Clip: {fileID: 0}
-  axe_Clip: {fileID: 0}

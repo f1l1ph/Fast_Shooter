@@ -591,8 +591,8 @@ MonoBehaviour:
   point: {fileID: 657223683661443973}
   point_To_Rotate_Around: {fileID: 657223684432338158}
   rotation_F: -10
-  damage: 75
-  force_To_Give: 2
+  damage: 50
+  force_To_Give: 0
   source: {fileID: 252245853}
   graphicks: {fileID: 8461028898199438324}
   graphicks_Script: {fileID: 205046303786620061}

@@ -58,13 +58,14 @@ public class Pit : MonoBehaviour
 
         Invoke("Chcek_For_Wave", 0.1f);
 
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < enemies.Length; i++) 
         {
             if (enemies[i] != null) { return; }
+            if (strong_Enemies[i] != null) { return; }
 
             if (wave_Count >= max_Waves)
             {
-                for (int x = 0; x < doors.Length; x++)
+                for (int x = 0; x < doors.Length; x++) 
                 {
                     doors[x].Open();
                 }
